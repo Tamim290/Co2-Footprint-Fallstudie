@@ -3,22 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Meine erste Website</title>
+    <title class="impressum Titel">Impressum</title>
     <link rel="stylesheet" href="style.css"> <!-- Hier wird CSS verbunden -->
 </head>
 
 <body>
 <h1>Impressum</h1>
-<h2>Angaben gemäß § 5 TMG:</h2>
 
-<ul>
+<ul class="impressumtext">
     <li style="margin-bottom: 1em;">Adresse:<br>
         Musterstraße 1<br>
         12345 Musterstadt
     </li>
     <li style="margin-bottom: 1em;">Kontakt:
         <ul>
-            <li style="margin-bottom: 0.5em;">Telefon: +49 (0)123 456789</li>
+            <li style="margin-bottom: 0.5em;">Telefon: <span style="color: rgb(0, 30, 255);">+49 (0)123 456789</span></li>
             <li>E-Mail: info@musterseite.de</li>
         </ul>
     </li>
@@ -31,13 +30,14 @@
 </ul>
 </body>
 
-<footer style="margin-top: 120px; text-align: center;">
-    <nav>
-        <ul style="list-style: none; padding: 0;">
-            <li style="display: inline; margin-right: 20px;"><a href="Datenschutz.html">Kontakt</a></li>
-            <li style="display: inline;"><a href="index.html">Homepage</a></li>
-        </ul>
-    </nav>
-</footer>
+ <footer class="footer">    
+        <nav style="display: flex; justify-content: center;"></nav>
+        <li><a href="Datenschutz.html">Datenschutz</a></li>
+        <li><a href="index.html">Homepage</a></li>
+        </nav>
+    </footer>
+
 
 </html>
+
+   

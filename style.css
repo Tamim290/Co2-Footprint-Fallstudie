@@ -1,15 +1,171 @@
 /* style.css */
+
+/* macht Fotos immer responsive*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/*  Responsiv: Flexibles Layout */
 body {
-  background-color: #f0f0f0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+.container {
+  max-width: 1200px;
+  /* begrenzt die Breite auf großen Bildschirmen */
+  margin: 0 auto;
+  padding: 1rem;
+}
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  /*  Die Elemente werden untereinader platziert auf dem Handy */
+  gap: 1rem;
+}
+.box {background-color: #eee;
+  padding: 1rem;
+  text-align: center;}
+
+/* Seite flexibel für Tablets */
+/*  nebeneinander ab 768px */
+@media (min-width: 768px) {
+  .flexbox {flex-direction: row;}.box {flex: 1;}}
+
+
+
+
+
+/* Ab hier optisch->>>>*/
+body {
+  background-color: #f6faf7ad;
   font-family: Arial, sans-serif;
 }
 
 h1 {
   color: darkblue;
   text-align: center;
+  text-decoration: underline;
+}
+p.Text.Homepage {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #050505;
+  margin: 20px auto;
+  max-width: 1000px;
+  width: 95vw;
+  text-align: justify;
 }
 
-p {
+p.Text.Datenschutz {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #050505;
+  margin: 20px auto;
+  max-width: 1000px; /* breiter */
+  text-align: center;   /* weiter links */
+  display: block;
+}
+
+.suchleiste {
+  display: flex;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.suchleiste input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.suchleiste button {
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: rgb(103, 171, 249);
+
+}
+
+footer {
+  background-color: #c5c2c2;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  bottom: -700px;
+  width: 100%;
+}
+
+
+table.tabelle.Homepage {/* Tabelle auf der Homepage */
+  border-collapse: collapse;
+  width: 60%; 
+  margin: 20px auto;
+  color: rgb(12, 11, 11);
+}
+
+td {/* Tabelle Inhalt */
+  border: 3px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+th {/* Tabelle Katergorien*/
+  background-color: rgb(177, 175, 175);
+   border: 3px solid black;
+  padding: 10px;
+  text-align: left;
+} 
+
+
+table.tabelle.Emissionsdaten {/* Tabelle Emissionsdaten */
+  border-collapse: collapse;
+  width: 60%; 
+  margin: 20px auto;
+  color: rgb(12, 11, 11);
+}
+
+td {/* Tabelle Inhalt */
+  border: 3px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+th {/* Tabelle Katergorien*/
+  background-color: rgb(177, 175, 175);
+   border: 3px solid black;
+  padding: 10px;
+  text-align: left;
+} 
+
+p.Logo.beschreibung {
+  text-align: center;
+  font-style: italic;
+  color: #0e0d0d;
+  margin-top: 10px;
+}
+
+img.Logo.Foto {
+  display: block;
+  margin: 0 auto;
+  width: 150px; /* Größe des Logos */
+}
+
+p.TextCo2 {
   font-size: 18px;
-  color: #333;
+  line-height: 1.6;
+  color: #080707;
+  margin: 20px auto;
+  max-width: 1000px; /* breiter */
+  text-align: center;   /* weiter links */
+}
+
+
+ul.impressumtext {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111010;
+  margin: 10px auto;
+  max-width: 800px;
+  text-align: left;
 }
