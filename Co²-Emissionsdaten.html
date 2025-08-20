@@ -52,40 +52,106 @@
    
 
     <h1 style="text-align:center;">Emissionsdaten Tabelle</h1>
-
-    <table class="tabelle Emissionsdaten">
-        <tr>
-            <th>Unternehmen</th>
-            <th>Land</th>
-            <th>CO₂-Emissionen (pro Jahr)</th>
-        </tr>
-        <tr>
-            <td>Lufthansa Group</td>
-            <td>Deutschland</td>
-            <td>ca. 28.967.753 Tonnen CO₂</td>
-        </tr>
-        <tr>
-            <td>Deutsche Bahn</td>
-            <td>Deutschland</td>
-            <td>ca. 10.110.000 Tonnen CO₂</td>
-        </tr>
-        <tr>
-            <td>Apple</td>
-            <td>USA</td>
-            <td>ca. 15.600.000 Tonnen CO₂</td>
-        </tr>
-        <tr>
-            <td>Lenovo</td>
-            <td>China</td>
-            <td>ca. 10.200.000 Tonnen CO₂</td>
-        </tr>
+    <table class="tabelle Emissionsdaten" id="emissionstabelle">
+        <thead>
+            <tr>
+                <th>
+                    Unternehmen
+                    <button onclick="toggleSortOrderByName(0)">🔄</button>
+                </th>
+                <th>
+                    Land
+                    <button onclick="toggleSortOrderByName(1)">🔄</button>
+                </th>
+                <th>
+                    CO₂-Emissionen (pro Jahr)
+                    <button onclick="toggleSortOrderByEmissions()">🔄</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lufthansa Group</td>
+                <td>Deutschland</td>
+                <td>ca. 28.967.753 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Deutsche Bahn</td>
+                <td>Deutschland</td>
+                <td>ca. 10.110.000 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>USA</td>
+                <td>ca. 15.600.000 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Lenovo</td>
+                <td>China</td>
+                <td>ca. 10.200.000 Tonnen CO₂</td>
+            <tr>
+                <td>Solvay</td>
+                <td>Belgien</td>
+                <td>ca. 6.000.000 Tonnen CO₂</td>
+            </tr>
+        </tbody>
     </table>
 
-    
-    <p class="Logo beschreibung">Das ist unser Logo / ein Symbol für unsere Mission.</p>
-    <!-- Bild von Logo -->
-     <img class="Logo Foto" src="logo.jpeg" alt="Logo von Planet for Future">
+    <script>
+        let ascendingEmissions = true;
+        let ascendingName = [true, true];
 
+        function toggleSortOrderByEmissions() {
+            ascendingEmissions = !ascendingEmissions;
+            sortTableByEmissions();
+        }
+
+        function toggleSortOrderByName(columnIndex) {
+            ascendingName[columnIndex] = !ascendingName[columnIndex];
+            sortTableByName(columnIndex);
+        }
+
+        function sortTableByEmissions() {
+            const table = document.getElementById("emissionstabelle");
+            const rows = Array.from(table.tBodies[0].rows);
+
+            rows.sort((a, b) => {
+                const aEmissions = parseInt(a.cells[2].textContent.replace(/[^0-9]/g, ''));
+                const bEmissions = parseInt(b.cells[2].textContent.replace(/[^0-9]/g, ''));
+                return ascendingEmissions ? aEmissions - bEmissions : bEmissions - aEmissions;
+            });
+
+            rows.forEach(row => table.tBodies[0].appendChild(row));
+        }
+
+        function sortTableByName(columnIndex) {
+            const table = document.getElementById("emissionstabelle");
+            const rows = Array.from(table.tBodies[0].rows);
+            
+            rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].textContent.trim().toLowerCase();
+                const bText = b.cells[columnIndex].textContent.trim().toLowerCase();
+                return ascendingName[columnIndex] ? aText.localeCompare(bText) : bText.localeCompare(aText);
+            });
+
+            rows.forEach(row => table.tBodies[0].appendChild(row));
+        }
+    </script>
+
+ <p class="Logo beschreibung">Das ist unser Logo / ein Symbol für unsere Mission.</p>
+    
+    <!-- Bild von Logo -->
+<div style="display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px;">
+    <figure style="margin: 0; text-align: center;">
+        <img class="Logo Foto" src="logo.jpeg" style="display: block; max-width: 100%;">
+        <figcaption style="font-size: 0.8em; color: gray; margin-top: 4px;">
+            <!-- Bildquelle -->
+            Quelle: <a href="https://pngtree.com/freepng/environmental-protection-natural-environment-logo-vector_9204796.html" target="_blank" style="color: gray; text-decoration: none;">
+                https://pngtree.com
+            </a>
+        </figcaption>
+    </figure>
+</div>
 
 </body>
     <footer class="footer">    
