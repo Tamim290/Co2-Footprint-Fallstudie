@@ -15,6 +15,36 @@
 
 <body>
 
+
+  <form id="suchleiste" class="suchleiste" onsubmit="return handleSuche(event);">
+        <input type="text" name="q" placeholder="Suche...">
+        <button type="submit">🔍</button>
+    </form>
+    <script>
+        //Aktive Suchleiste mittels java
+        function handleSuche(event) {
+            event.preventDefault();
+            // Nur Buchstaben, Zahlen und Leerzeichen erlauben (anti injizierter code)
+            let query = event.target.q.value.trim().toLowerCase();
+            query = query.replace(/[^a-z0-9äöüß\s]/gi, '');
+            //wenn Suchbegriff gefunden dann Seite öffnen
+            if (query === "impressum") {
+                window.location.href = "Impressum.html";
+                return false;
+            } else if (query === "lösungsansätze") {
+                window.location.href = "Lösungsansätze.html";
+                return false;
+            } else if (query === "homepage") {
+                window.location.href = "index.html";
+                return false;
+            } else {
+                alert("Suchbegriff nicht gefunden");
+            }
+        }
+    </script>
+
+</body>
+
 <p class="Text Datenschutz">
 <strong>Datenschutzhinweis</strong><br>
 <br>Planet for Future, verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung 
