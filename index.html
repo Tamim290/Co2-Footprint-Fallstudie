@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+<!-- Hier wird die Seite responsive gemacht -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+    <form id="suchleiste" class="suchleiste" onsubmit="return handleSuche(event);">
+        <input type="text" name="q" placeholder="Suche...">
+        <button type="submit">🔍</button>
+    </form>
+    <script>
+        //Aktive Suchleiste mittels java
+        function handleSuche(event) {
+            event.preventDefault();
+            // Nur Buchstaben, Zahlen und Leerzeichen erlauben (anti injizierter code)
+            let query = event.target.q.value.trim().toLowerCase();
+            query = query.replace(/[^a-z0-9äöüß\s]/gi, '');
+            //wenn Suchbegriff gefunden dann Seite öffnen
+            if (query === "impressum") {
+                window.location.href = "Impressum.html";
+                return false;
+            } else if (query === "datenschutz") {
+                window.location.href = "Datenschutz.html";
+                return false;
+            } else if (query === "emissionsdaten") {
+                window.location.href = "Co²-Emissionsdaten.html";
+                return false;
+            } else {
+                alert("Suchbegriff nicht gefunden");
+            }
+        }
+    </script>
+
+    <h1>Willkommen auf Planet for future</h1>
+
+      <div class="nav-box">
+    <h3>Navigation</h3>
+    <ul>
+    <li><a href="Co²-Emissionsdaten.html">Co²-Emissionsdaten</a></li>
+      <li><a href="Impressum.html">Impressum</a></li>
+      <li><a href="Datenschutz.html">Datenschutz</a></li>
+    
+    </ul>
+  </div>
+
+
+    <p class="Text Homepage">
+        Bei <strong>Planet for Future</strong> setzen wir uns für eine nachhaltige und
+        lebenswerte Zukunft unseres Planeten ein. Auf unserer Website informieren wir
+        über aktuelle Umweltprojekte, nachhaltige Technologien und einfache Tipps,
+        wie jeder von uns aktiv zum Umweltschutz beitragen kann.
+    </p>
+    <p class="Text Homepage">
+        Unsere Mission ist es, Bewusstsein zu schaffen, Wissen zu teilen und gemeinsam
+        positive Veränderungen zu bewirken. Schau dich gerne um und werde Teil der
+        Bewegung für eine bessere Zukunft!
+    <a href="Co²-Emissionsdaten.html">Hier geht es zu unseren Co² Emissions Forschungen</a>
+    </p>
+   
+
+    <h1 class="Projekt">Projektübersicht</h1>
+
+    <table class="tabelle Homepage">
+        <tr>
+            <th>Projekt</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Solarenergie-Initiative</td>
+            <td>Aktiv</td>
+        </tr>
+        <tr>
+            <td>Baumpflanzaktion</td>
+            <td>Abgeschlossen</td>
+        </tr>
+    </table>
+    <p class="Logo beschreibung">Das ist unser Logo / ein Symbol für unsere Mission.</p>
+    
+    <!-- Bild von Logo -->
+<div style="display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px;">
+    <figure style="margin: 0; text-align: center;">
+        <img class="Logo Foto" src="logo.jpeg" style="display: block; max-width: 100%;">
+        <figcaption style="font-size: 0.8em; color: gray; margin-top: 4px;">
+            <!-- Bildquelle -->
+            Quelle: <a href="https://pngtree.com/freepng/environmental-protection-natural-environment-logo-vector_9204796.html" target="_blank" style="color: gray; text-decoration: none;">
+                https://pngtree.com
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+</body>
+  <footer class="footer">    
+        <nav style="display: flex; justify-content: center;"></nav>
+        <li><a href="Datenschutz.html">Datenschutz</a></li>
+        <li><a href="Impressum.html">Impressum</a></li>
+        </nav>
+    </footer>
+</html>

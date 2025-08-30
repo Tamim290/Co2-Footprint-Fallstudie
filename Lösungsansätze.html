@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Emissionsdaten</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Hier wird die Seite responsive gemacht -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+    <form id="suchleiste" class="suchleiste" onsubmit="return handleSuche(event);">
+        <input type="text" name="q" placeholder="Suche...">
+        <button type="submit">🔍</button>
+    </form>
+    <script>
+        //Aktive Suchleiste mittels java
+        function handleSuche(event) {
+            event.preventDefault();
+            // Nur Buchstaben, Zahlen und Leerzeichen erlauben (anti injizierter code)
+            let query = event.target.q.value.trim().toLowerCase();
+            query = query.replace(/[^a-z0-9äöüß\s]/gi, '');
+            //wenn Suchbegriff gefunden dann Seite öffnen
+            if (query === "impressum") {
+                window.location.href = "Impressum.html";
+                return false;
+            } else if (query === "datenschutz") {
+                window.location.href = "Datenschutz.html";
+                return false;
+            } else if (query === "datentabelle") {
+                window.location.href = "datentabelle.html";
+                return false;
+            } else {
+                alert("Suchbegriff nicht gefunden");
+            }
+        }
+    </script>
+
+    <h1>Lösungsansätze</h1>
+
+    <p class="TextCo2">
+        In der folgenden Tabelle stellen wir verschiedene Lösungsansätze für erneuerbare Energien vor.
+        Diese Ansätze zeigen, wie wir gemeinsam eine nachhaltigere Zukunft gestalten können.
+    </p>
+
+
+    <h1 style="text-align:center;">Erneuerbare Energien</h1>
+    <table class="tabelle Energien">
+        <thead>
+            <tr>
+                <th>
+                    Erneuerbare Energie
+                </th>
+                <th>
+                    Beschreibung
+                </th>
+                <th>
+                    Foto
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Solarenergie</td>
+                <td>Die Nutzung von Sonnenlicht zur Strom- oder Wärmeerzeugung.</td>
+                <td>
+                    <figure style="margin: 0; text-align: center;">
+                        <img src="Solar.jpg" alt="Solarenergie" style="max-width: 14em;">
+                        <figcaption style="font-size: 0.6em; color: gray; margin-top: 2px;">
+                            <!-- Bildquelle -->
+                            Quelle: <a
+                                href="https://unsplash.com/de/fotos/solarpanel-platinen-auf-braunem-boden-fm5_vCUa-Bc"
+                                target="_blank" style="color: gray; text-decoration: none;">
+                                https://unsplash.com
+                            </a>
+                        </figcaption>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>Windenergie</td>
+                <td>Die Umwandlung von Windkraft in elektrische Energie.</td>
+                <td>
+                    <figure style="margin: 0; text-align: center;">
+                        <img src="Windrad.jpg" alt="Windenergie" style="max-width: 14em;">
+                        <figcaption style="font-size: 0.6em; color: gray; margin-top: 2px;">
+                            <!-- Bildquelle -->
+                            Quelle: <a
+                                href="https://unsplash.com/de/fotos/windmuhlen-auf-der-wiese-tagsuber-4NhqyQeErP8"
+                                target="_blank" style="color: gray; text-decoration: none;">
+                                https://unsplash.com
+                            </a>
+                        </figcaption>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>Wasserkraft</td>
+                <td>Die Nutzung von fließendem Wasser zur Energiegewinnung.</td>
+                <td>
+                    <figure style="margin: 0; text-align: center;">
+                        <img src="wasserkraft.jpg" alt="Wasserkraft" style="max-width: 14em;">
+                        <figcaption style="font-size: 0.6em; color: gray; margin-top: 2px;">
+                            <!-- Bildquelle -->
+                            Quelle: <a
+                                href="https://unsplash.com/de/fotos/ein-grosser-damm-aus-dem-wasser-herauskommt-kGocua2hRfQ"
+                                target="_blank" style="color: gray; text-decoration: none;">
+                                https://unsplash.com
+                            </a>
+                        </figcaption>
+                    </figure>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <p class="Logo beschreibung">Das ist unser Logo / ein Symbol für unsere Mission.</p>
+
+    <!-- Bild von Logo -->
+    <div style="display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px;">
+        <figure style="margin: 0; text-align: center;">
+            <img class="Logo Foto" src="logo.jpeg" style="display: block; max-width: 100%;">
+            <figcaption style="font-size: 0.8em; color: gray; margin-top: 4px;">
+                <!-- Bildquelle -->
+                Quelle: <a
+                    href="https://pngtree.com/freepng/environmental-protection-natural-environment-logo-vector_9204796.html"
+                    target="_blank" style="color: gray; text-decoration: none;">
+                    https://pngtree.com
+                </a>
+            </figcaption>
+        </figure>
+    </div>
+
+</body>
+<footer class="footer">
+    <nav style="display: flex; justify-content: center;"></nav>
+    <li><a href="Datenschutz.html">Datenschutz</a></li>
+    <li><a href="Impressum.html">Impressum</a></li>
+    </nav>
+</footer>
+
+</html>
