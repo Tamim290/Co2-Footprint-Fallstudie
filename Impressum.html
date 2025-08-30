@@ -3,12 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <title class="impressum Titel">Impressum</title>
+    <title>Impressum</title>
     <link rel="stylesheet" href="style.css"> <!-- Hier wird CSS verbunden -->
 </head>
 
 <body>
-<h1 class="impressumtitel" >Impressum</h1>
+
+  <form id="suchleiste" class="suchleiste" onsubmit="return handleSuche(event);">
+        <input type="text" name="q" placeholder="Suche...">
+        <button type="submit">🔍</button>
+    </form>
+    <script>
+        //Aktive Suchleiste mittels java
+        function handleSuche(event) {
+            event.preventDefault();
+            // Nur Buchstaben, Zahlen und Leerzeichen erlauben (anti injizierter code)
+            let query = event.target.q.value.trim().toLowerCase();
+            query = query.replace(/[^a-z0-9äöüß\s]/gi, '');
+            //wenn Suchbegriff gefunden dann Seite öffnen
+            if (query === "impressum") {
+                window.location.href = "Impressum.html";
+                return false;
+            } else if (query === "datenschutz") {
+                window.location.href = "Datenschutz.html";
+                return false;
+            } else if (query === "homepage") {
+                window.location.href = "index.html";
+                return false;
+            } else {
+                alert("Suchbegriff nicht gefunden");
+            }
+        }
+    </script>
+
+
+<h1 class="impressumtitel">Impressum</h1>
+
 
 <div class="impressumtext">
 
@@ -29,8 +59,8 @@
             12345 Musterstadt 
         </li>
 </div>
-</body>
 
+</body>
  <footer class="footer">    
         <nav style="display: flex; justify-content: center;"></nav>
         <li><a href="Datenschutz.html">Datenschutz</a></li>
