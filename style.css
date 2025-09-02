@@ -28,14 +28,19 @@ body {
   padding: 1rem;
   text-align: center;}
 
-/* Seite flexibel für Tablets */
-/*  und nebeneinander ab 768px */
-@media (min-width: 768px) {
-  .flexbox {flex-direction: row;}
-  .box {flex: 1;}
+body {
+  background-color: #f6faf7ad;
+  font-family: Arial, sans-serif;
+}
+
+  /* Seite flexibel für Tablets */
+  /*  und nebeneinander ab 768px */
+  @media (min-width: 768px) {
+    .flexbox {flex-direction: row;}
+    .box {flex: 1;}
     body {
     padding: 20px;
-    background-color: #c41919; 
+    background-color: #f7f4f4; 
   }
 }
 
@@ -54,10 +59,7 @@ html {
 }
 
 /* Ab hier optisch->>>>*/
-body {
-  background-color: #f6faf7ad;
-  font-family: Arial, sans-serif;
-}
+
 
 h1 {
   color: darkblue;
