@@ -33,12 +33,13 @@ body {
 @media (min-width: 768px) {
   .flexbox {flex-direction: row;}
   .box {flex: 1;}
-  body {padding: 10px;}
+    body {
+    padding: 20px;
+    background-color: #c41919; 
+  }
 }
 
-@media (max-width: 767px) {
-  body {padding: 20px;}
-}
+ 
 
 
 
