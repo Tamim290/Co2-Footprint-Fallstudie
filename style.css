@@ -29,7 +29,7 @@ body {
   text-align: center;}
 
 /* Seite flexibel für Tablets */
-/*  nebeneinander ab 768px */
+/*  und nebeneinander ab 768px */
 @media (min-width: 768px) {
   .flexbox {flex-direction: row;}
   .box {flex: 1;}
@@ -39,7 +39,13 @@ body {
   }
 }
 
- 
+/* das gleiche fürs Handy */
+@media (max-width: 767px) {
+  body {
+    padding: 20px;
+    background-color: #d31212; /* Testfarbe */
+  }
+} 
 
 
 
