@@ -36,6 +36,10 @@ body {
   body {padding: 10px;}
 }
 
+@media (max-width: 767px) {
+  body {padding: 20px;}
+}
+
 
 
 html {
