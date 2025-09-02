@@ -31,7 +31,12 @@ body {
 /* Seite flexibel für Tablets */
 /*  nebeneinander ab 768px */
 @media (min-width: 768px) {
-  .flexbox {flex-direction: row;}.box {flex: 1;}}
+  .flexbox {flex-direction: row;}
+  .box {flex: 1;}
+  body {padding: 10px;}
+}
+
+
 
 html {
   font-size: 13px; /* Basis größe */
