@@ -6,12 +6,7 @@ img {
   height: auto;
   display: block;
 }
-/*  Responsiv: Flexibles Layout */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-}
+
 .container {
   max-width: 1200px;
   /* begrenzt die Breite auf großen Bildschirmen */
@@ -31,6 +26,10 @@ body {
 body {
   background-color: #f6faf7ad;
   font-family: Arial, sans-serif;
+/*  Responsiv: Flexibles Layout */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
 }
 
   /* Seite flexibel für Tablets */
@@ -40,18 +39,22 @@ body {
     .box {flex: 1;}
     body {
     padding: 20px;
-    background-color: #f7f4f4; 
   }
 }
 
 /* das gleiche fürs Handy */
 @media (max-width: 767px) {
+  .flexbox {
+    flex-direction: row;
+  }
+  .box {
+    flex: 1;
+  }
   body {
     padding: 20px;
-    background-color: #d31212; /* Testfarbe */
+    margin: 0 10px; /* Rand auf beiden Seiten hinzufügen */
   }
-} 
-
+}
 
 
 html {
@@ -133,13 +136,19 @@ section.datenschutz {
   background-color: rgb(103, 171, 249);
 }
 
-footer {
-  background-color: #c5c2c2;
-  padding: 10px;
+
+footer.footer {
+  display: flex; 
+  flex-direction: column; 
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  border: 5px solid darkblue; 
+  padding: 3rem; /* Innenabstand weiter erhöht */
+  border-radius: 20px; /* Abgerundete Ecken weiter vergrößert */
+  background-color: #e0e7ef; /* Noch hellere Hintergrundfarbe */
+  max-width: 1400px; /* Breite weiter erhöht */
+  margin: 80px auto; /* Mehr vertikaler Abstand und zentriert */
   text-align: center;
   position: relative;
-  bottom: -700px;
-  width: 100%;
 }
 
 table.tabelle.Homepage {
@@ -193,14 +202,16 @@ p.Logo.beschreibung {
   font-style: italic;
   color: #0e0d0d;
   margin-top: 10px;
-  font-size: clamp(1rem, 1vw, 3rem); /* Fluid font-size */
+  font-size: clamp(1rem, 1.5vw, 2rem); /* Fluid font-size kleiner */
+  padding-top: 10%; /* Weniger Abstand oben */
 }
 
 img.Logo.Foto {
   display: block;
   margin: 0 auto;
-  width: 150px; /* Größe des Logos */
+  width: 150px; /* Größe des Logos kleiner */
 }
+
 
 p.TextCo2 {
   font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
@@ -223,7 +234,7 @@ div.impressumtext {
   flex-direction: column;
   text-align: center;
   list-style-position: inside;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid schriftgröße */
   border: 5px solid darkblue; /* Rahmen hinzufügen */
   padding: 1rem; /* Innenabstand */
   border-radius: 8px; /* Abgerundete Ecken */
@@ -231,14 +242,29 @@ div.impressumtext {
 }
 
 div.nav-box {
-  display: inline-block; /* Passt die Größe an den Inhalt an */
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
-  border: 5px solid darkblue; /* Rahmen hinzufügen */
-  padding: 1rem; /* Innenabstand */
+  display: flex; 
+  flex-direction: column; 
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  border: 5px solid darkblue; 
+  padding: 0.5rem; /* Innenabstand reduziert */
   border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
-  
+  background-color: #e5e6ea; 
+  max-width: 180px; 
 }
+
+div.lokale-navigation {
+  display: flex; 
+  flex-direction: column; 
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  border: 5px solid rgb(18, 183, 64); 
+  padding: 0.5rem 0.5rem; /* Innenabstand */
+  border-radius: 8px; /* Abgerundete Ecken */
+  background-color: #e5e6ea; 
+  max-width: 180px; /* Begrenzung der Breite, um den Kasten kleiner zu machen */
+  margin-left: auto;
+}
+
+
 
 img.Energien {
   display: block;
