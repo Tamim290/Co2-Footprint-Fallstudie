@@ -140,7 +140,7 @@ section.datenschutz {
 footer.footer {
   display: flex; 
   flex-direction: column; 
-  font-size: clamp(1rem, 2vw, 1.25rem); 
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem); 
   border: 5px solid darkblue; 
   padding: 3rem; /* Innenabstand weiter erhöht */
   border-radius: 20px; /* Abgerundete Ecken weiter vergrößert */
