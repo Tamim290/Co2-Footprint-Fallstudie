@@ -68,13 +68,33 @@ h1 {
   color: darkblue;
   text-align: center;
   text-decoration: underline;
-  font-size: clamp(1.5rem, 4vw, 3rem); /* Fluid font-size */
+  font-size: clamp(1.8rem, 5vw, 3.5rem); /* Fluid font-size */
 }
-h1.Projektübersicht {  
-  font-size: clamp(1.5rem, 4vw, 3rem); /* Fluid font-size */
-  margin: 40px 0 15px;
-  text-decoration: none; /* Unterstreichung entfernen */
+
+div.lokale-navigation {
+  display: flex; 
+      flex-direction: column;       /* sorgt für vertikale Ausrichtung */
+      font-size: clamp(1rem, 2vw, 1.25rem); 
+      border: 5px solid rgb(18, 183, 64); 
+      padding: 0.5rem; 
+      border-radius: 8px; 
+      background-color: #e5e6ea; 
+      max-width: 180px; 
+      margin-inline-end: 1rem; 
+      float: inline-start;   /* Falls die Schrift linksläufig ist wird die lokale Navigation nach links verschoben oder umgekehrt */
+      box-sizing: border-box;
 }
+
+
+  @media (max-width: 700px) {
+      .lokale-navigation {
+        float: none;               /* float ausschalten */
+        width: 100%;               /* volle Breite */
+        margin-inline-end: 0;      /* kein extra Abstand */     
+        margin-block-end: 1rem;    /* Abstand NACH UNTEN */
+      }
+  }
+
 
 p.Text.Homepage {
   font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
@@ -88,6 +108,7 @@ p.Text.Homepage {
   padding: 1rem; /* Innenabstand */
   border-radius: 8px; /* Abgerundete Ecken */
   background-color: #e5e6ea; /* Hintergrundfarbe */
+  display: flow-root; /* verhindert, dass das Menü mit dem Text überlappt */
 }
 
 p.Text.Datenschutz {
@@ -142,11 +163,10 @@ footer.footer {
   flex-direction: column; 
   font-size: clamp(1.25rem, 2.5vw, 1.75rem); 
   border: 5px solid darkblue; 
-  padding: 3rem; /* Innenabstand weiter erhöht */
-  border-radius: 20px; /* Abgerundete Ecken weiter vergrößert */
-  background-color: #e0e7ef; /* Noch hellere Hintergrundfarbe */
-  max-width: 1400px; /* Breite weiter erhöht */
-  margin: 80px auto; /* Mehr vertikaler Abstand und zentriert */
+  padding: 1rem; /* Innenabstand reduziert */
+  border-radius: 10px; /* Abgerundete Ecken verkleinert */
+  background-color: #e0e7ef; /* Helle Hintergrundfarbe beibehalten */
+  margin: 20px auto; /* Weniger vertikaler Abstand */
   text-align: center;
   position: relative;
 }
@@ -241,29 +261,10 @@ div.impressumtext {
   background-color: #e5e6ea; /* Hintergrundfarbe */
 }
 
-div.nav-box {
-  display: flex; 
-  flex-direction: column; 
-  font-size: clamp(1rem, 2vw, 1.25rem); 
-  border: 5px solid darkblue; 
-  padding: 0.5rem; /* Innenabstand reduziert */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; 
-  max-width: 180px; 
-}
 
-div.lokale-navigation {
-  display: flex; 
-  flex-direction: column; 
-  font-size: clamp(1rem, 2vw, 1.25rem); 
-  border: 5px solid rgb(18, 183, 64); 
-  padding: 0.5rem 0.5rem; /* Innenabstand */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; 
-  max-width: 180px; /* Begrenzung der Breite, um den Kasten kleiner zu machen */
-  margin-left: auto;
-}
 
+
+  
 
 
 img.Energien {
