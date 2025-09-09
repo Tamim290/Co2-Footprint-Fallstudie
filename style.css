@@ -267,4 +267,38 @@ img.Energien {
   width: 350px;
   height: 250px;
   object-fit: cover;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 24px; 
+  margin-top: 24px;
 }
+
+.wrapper {
+  max-width: 1000px;   /* maximale Breite auf großen Screens */
+  margin: 0 auto;      /* zentriert den Container */
+}
+
+.container {
+  display: flex;
+  gap: 10px; /* Abstand zwischen Bildern */
+  justify-content: center; /* zentriert die Bilder horizontal */
+}
+.container img.Energien {
+  flex: 1;             /* beide gleich breit */
+  height: 200px;       /* gleiche Höhe */
+  object-fit: cover;   /* Bild füllt Höhe/Breite, evtl. Beschnitt */
+  width: 100%;         /* wichtig, damit flex sauber greift */
+  border-radius: 8px;  /* optional, hübscher */
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+  .container img.Energien {
+    height: 250px;
+  }
+ 
