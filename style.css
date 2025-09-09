@@ -37,22 +37,16 @@ body {
   @media (min-width: 768px) {
     .flexbox {flex-direction: row;}
     .box {flex: 1;}
-    body {
-    padding: 20px;
-  }
+    body {padding: 20px;}
 }
 
 /* das gleiche fürs Handy */
 @media (max-width: 767px) {
   .flexbox {
-    flex-direction: row;
-  }
-  .box {
-    flex: 1;
-  }
-  body {
-    padding: 20px;
-    margin: 0 10px; /* Rand auf beiden Seiten hinzufügen */
+    flex-direction: row;}
+  .box {flex: 1; }
+  body {padding: 20px;
+       margin: 0 10px; /* Rand auf beiden Seiten hinzufügen */
   }
 }
 
@@ -73,14 +67,13 @@ h1 {
 
 div.lokale-navigation {
   display: flex; 
-      flex-direction: column;       /* sorgt für vertikale Ausrichtung */
+      flex-direction: column;  /* sorgt für vertikale Ausrichtung */
       font-size: clamp(1rem, 2vw, 1.25rem); 
       border: 5px solid rgb(18, 183, 64); 
       padding: 0.5rem; 
       border-radius: 8px; 
       background-color: #e5e6ea; 
       max-width: 180px; 
-      margin-inline-end: 1rem; 
       float: inline-start;   /* Falls die Schrift linksläufig ist wird die lokale Navigation nach links verschoben oder umgekehrt */
       box-sizing: border-box;
 }
@@ -100,16 +93,18 @@ p.Text.Homepage {
   font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
   line-height: 1.6;
   color: #050505;
-  margin: 20px auto;
-  max-width: 1000px;
-  width: 100vw;
+  margin: 20px auto; /* zentriert die Box */
+  max-width: 1000px; /* maximale Breite */
   text-align: justify;
   border: 5px solid darkblue; /* Rahmen hinzufügen */
   padding: 1rem; /* Innenabstand */
   border-radius: 8px; /* Abgerundete Ecken */
   background-color: #e5e6ea; /* Hintergrundfarbe */
-  display: flow-root; /* verhindert, dass das Menü mit dem Text überlappt */
+  display: flow-root; /*  verhindert, dass das Menü mit dem Text überlappt */
 }
+
+
+
 
 p.Text.Datenschutz {
   font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
@@ -236,15 +231,15 @@ img.Logo.Foto {
 p.TextCo2 {
   font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
   line-height: 1.6;
-  color: #080707;
-  margin: 20px auto;
-  max-width: 1000px; /* breiter */
-  text-align: center; /* weiter links */
-    font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  color: #050505;
+  margin: 20px auto; /* zentriert die Box */
+  max-width: 1000px; /* maximale Breite */
+  text-align: justify;
   border: 5px solid darkblue; /* Rahmen hinzufügen */
   padding: 1rem; /* Innenabstand */
   border-radius: 8px; /* Abgerundete Ecken */
   background-color: #e5e6ea; /* Hintergrundfarbe */
+  display: flow-root; /*  verhindert, dass das Menü mit dem Text überlappt */
 }
 
 div.impressumtext {
