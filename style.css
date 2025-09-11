@@ -65,6 +65,51 @@ h1 {
   font-size: clamp(1.8rem, 5vw, 3.5rem); /* Fluid font-size */
 }
 
+nav {
+  height: clamp(5rem, 12vw, 6.625rem); /* Fluid height */
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px clamp(0.25rem, 0.5vw, 0.375rem) clamp(0.375rem, 0.75vw, 0.5rem) rgba(0, 0, 0, 0.1); /* Fluid shadow */
+}
+
+nav ul {
+  float: right;
+}
+
+nav li {
+  display: inline-block;
+  margin-top: clamp(1.25rem, 2.5vw, 1.5625rem); /* Fluid margin-top */
+  margin-right: clamp(1rem, 2vw, 1.25rem); /* Fluid margin-right */
+}
+
+nav li a {
+  text-decoration: none;
+  color: #333; 
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-weight: bold; 
+}
+
+nav li a:hover {
+  color: rgb(244, 10, 244);
+  text-decoration: underline;
+}
+
+nav li a.active {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+/* Logo-Bild in der Navigation */
+nav img {
+  height: clamp(6rem, 7vw, 4.75rem); /* Fluid height */
+  width: auto;
+  display: inline-block; /* Stellt sicher, dass es mit den Navigationselementen ausgerichtet ist */
+}
+
+
+
+
+
 div.lokale-navigation {
   display: flex; 
       flex-direction: column;  /* sorgt für vertikale Ausrichtung */

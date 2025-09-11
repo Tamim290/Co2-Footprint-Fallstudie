@@ -6,14 +6,25 @@
     <meta charset="UTF-8">
     <title>Datenschutz</title>
     <link rel="stylesheet" href="style.css"> <!-- Hier wird CSS verbunden -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
+<body>
 
+<header> 
+    <nav>
+        <a href="index.html"><img src="logo.jpeg" alt="Logo"></a>
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="Lösungsansätze.html">Lösungsansätze</a></li>
+            <li><a href="Impressum.html">Impressum</a></li>
+            <li><a class="active" href="Datenschutz.html">Datenschutz</a></li>
+        </ul>
+    </nav>
+</header>
 
 <h1>Planet for Future</h1>
-
-<body>
 
 
   <form id="suchleiste" class="suchleiste" onsubmit="return handleSuche(event);">
@@ -43,7 +54,7 @@
         }
     </script>
 
-</body>
+<body>
 
 <p class="Text Datenschutz">
 <strong>Datenschutzhinweis</strong><br>
@@ -87,7 +98,7 @@ für weiteres.
 </body>
 
     <footer class="footer">    
-        <nav style="display: flex; justify-content: center;"></nav>
+        <nav style="display: flex; justify-content: center;">
         <li><a href="index.html">Homepage</a></li>
         <li><a href="Impressum.html">Impressum</a></li>
         </nav>

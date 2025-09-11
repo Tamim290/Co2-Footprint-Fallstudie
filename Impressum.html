@@ -5,9 +5,23 @@
     <meta charset="UTF-8">
     <title>Impressum</title>
     <link rel="stylesheet" href="style.css"> <!-- Hier wird CSS verbunden -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+<header> 
+    <nav>
+        <a href="index.html"><img src="logo.jpeg" alt="Logo"></a>
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="Lösungsansätze.html">Lösungsansätze</a></li>
+            <li><a class="active" href="Impressum.html">Impressum</a></li>
+            <li><a href="Datenschutz.html">Datenschutz</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Impressum</h1>
 
   <form id="suchleiste" class="suchleiste" onsubmit="return handleSuche(event);">
         <input type="text" name="q" placeholder="Suche...">
@@ -37,22 +51,18 @@
     </script>
 
 
-<h1 class="impressumtitel">Impressum</h1>
-
 
 <div class="impressumtext">
 
         <li><strong>Adresse:</strong><br>
             Musterstraße 1<br>
-            12345 Musterstadt
+            12345 Musterstadt<br>
         </li>
-        <li><strong>Kontakt:</strong>
-            <ul>
-                <li>Telefon: <span style="color: rgb(0, 30, 255);">+49 (0)123 456789</span></li>
-                <li>E-Mail: info@musterseite.de</li>
-            </ul>
+        <li><strong>Kontakt:</strong><br>
+            Telefon: <span style="color: rgb(0, 30, 255);">+49 (0)123 456789</span><br>
+            E-Mail: info@musterseite.de<br>
         </li>
-        <li><strong>Rechtliches:</strong><br>
+               <li><strong>Rechtliches:</strong><br>
             Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
             Max Mustermann<br>
             Musterstraße 1<br>
@@ -62,7 +72,7 @@
 
 </body>
  <footer class="footer">    
-        <nav style="display: flex; justify-content: center;"></nav>
+        <nav style="display: flex; justify-content: center;">
         <li><a href="Datenschutz.html">Datenschutz</a></li>
         <li><a href="index.html">Homepage</a></li>
         </nav>
