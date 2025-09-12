@@ -195,9 +195,27 @@ section.datenschutz {
   background-color: rgb(103, 171, 249);
 }
 
+div.lokale-navigation {
+  display: flex;
+  justify-content: flex-start; /* Standard: Links-nach-Rechts-Schriftkultur */
+  direction: ltr; /* Standard: Links-nach-Rechts-Schriftkultur */
+  gap: 10px; /* Abstand zwischen den Links */
+  max-width: 500px; /* maximale Breite */
+  border: #050505 solid 3px; /* Rahmen hinzufügen */
+  padding: 1px; /* Innenabstand */
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  border: 4px solid darkblue; /* Rahmen hinzufügen */
+  border-radius: 8px; /* Abgerundete Ecken */
+  background-color: #e5e6ea; /* Hintergrundfarbe */
+  gap: 10px; /* Abstand zwischen Elementen */
+  font-weight: bold;
+  width: 25.5rem; /* 1rem = 16px, so 200px = 12.5rem */
+}
+
+ 
 
 
-div.filter {
+div.filter {  
   display: flex;
   align-items: center;
   justify-content: space-between;
