@@ -83,7 +83,7 @@ h1 {
 .logo {
   max-width: 100%;
   height: auto;
-  width: clamp(8rem, 15vw, 5.5rem); /* Skaliert zwischen 100 und 180px */
+  width: clamp(15rem, 17vw, 7.5rem); /* Skaliert zwischen 100 und 180px */
 
 }
 
@@ -267,7 +267,7 @@ p.Logo.beschreibung {
 img.Logo.Foto {
   display: block;
   margin: 0 auto;
-  width: 150px; /* Größe des Logos kleiner */
+  width: 400px; /* Größe des Logos kleiner */
 }
 
 
