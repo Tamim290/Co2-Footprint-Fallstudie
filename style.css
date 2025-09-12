@@ -196,6 +196,31 @@ section.datenschutz {
 }
 
 
+
+div.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  border: 2px solid darkblue; /* Rahmen hinzufügen */
+  border-radius: 8px; /* Abgerundete Ecken */
+  background-color: #e5e6ea; /* Hintergrundfarbe */
+  gap: 10px; /* Abstand zwischen Elementen */
+}
+
+div.filter input {
+  flex: 1;
+  padding: 8px;
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  border: 1px solid darkblue;
+  border-radius: 4px;
+}
+
+
+
 footer.footer {
   display: flex; 
   flex-direction: column; 
@@ -298,7 +323,6 @@ div.impressumtext {
   border-radius: 8px; /* Abgerundete Ecken */
   background-color: #e5e6ea; /* Hintergrundfarbe */
 }
-
 
 
 

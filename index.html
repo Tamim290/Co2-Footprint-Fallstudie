@@ -123,58 +123,63 @@
 
 
 
+        <div class="filter">
+            <label for="filter-input">Filter nach Unternehmen:</label>
+            <input type="text" id="filter-input" oninput="filterTableByName()" placeholder="Unternehmen suchen...">
+        </div>
 
         <table class="tabelle Emissionsdaten" id="emissionstabelle">
             <thead>
-                <tr>
-                    <th>
-                        Unternehmen
-                        <button onclick="toggleSortOrderByName(0)">🔄</button>
-                    </th>
-                    <th>
-                        Land
-                        <button onclick="toggleSortOrderByName(1)">🔄</button>
-                    </th>
-                    <th>
-                        CO₂-Emissionen (pro Jahr)
-                        <button onclick="toggleSortOrderByEmissions()">🔄</button>
-                    </th>
-                </tr>
+            <tr>
+                <th>
+                Unternehmen
+                <button onclick="toggleSortOrderByName(0)">🔄</button>
+                </th>
+                <th>
+                Land
+                <button onclick="toggleSortOrderByName(1)">🔄</button>
+                </th>
+                <th>
+                CO₂-Emissionen (pro Jahr)
+                <button onclick="toggleSortOrderByEmissions()">🔄</button>
+                </th>
+            </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Lufthansa Group</td>
-                    <td>Deutschland</td>
-                    <td>ca. 28.967.753 Tonnen CO₂</td>
-                </tr>
-                <tr>
-                    <td>Deutsche Bahn</td>
-                    <td>Deutschland</td>
-                    <td>ca. 10.110.000 Tonnen CO₂</td>
-                </tr>
-                <tr>
-                    <td>Apple</td>
-                    <td>USA</td>
-                    <td>ca. 15.600.000 Tonnen CO₂</td>
-                </tr>
-                <tr>
-                    <td>Lenovo</td>
-                    <td>China</td>
-                    <td>ca. 10.200.000 Tonnen CO₂</td>
-                <tr>
-                    <td>Solvay</td>
-                    <td>Belgien</td>
-                    <td>ca. 6.000.000 Tonnen CO₂</td>
-                </tr>
+            <tr>
+                <td>Lufthansa Group</td>
+                <td>Deutschland</td>
+                <td>ca. 28.967.753 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Deutsche Bahn</td>
+                <td>Deutschland</td>
+                <td>ca. 10.110.000 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>USA</td>
+                <td>ca. 15.600.000 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Lenovo</td>
+                <td>China</td>
+                <td>ca. 10.200.000 Tonnen CO₂</td>
+            </tr>
+            <tr>
+                <td>Solvay</td>
+                <td>Belgien</td>
+                <td>ca. 6.000.000 Tonnen CO₂</td>
+            </tr>
             </tbody>
         </table>
-    </section>
+        </section>
 
-    <script>
+        <script>
         let ascendingEmissions = true;
         let ascendingName = [true, true];
 
-        function toggleSortOrderByEmissions() {
+        function toggleSortOrderByEmissions() {                                    // Umschalten der Sortierreihenfolge
             ascendingEmissions = !ascendingEmissions;
             sortTableByEmissions();
         }
@@ -184,32 +189,44 @@
             sortTableByName(columnIndex);
         }
 
-        function sortTableByEmissions() {
+        function sortTableByEmissions() {                                                     // Sortierfunktion   
             const table = document.getElementById("emissionstabelle");
             const rows = Array.from(table.tBodies[0].rows);
 
             rows.sort((a, b) => {
-                const aEmissions = parseInt(a.cells[2].textContent.replace(/[^0-9]/g, ''));
-                const bEmissions = parseInt(b.cells[2].textContent.replace(/[^0-9]/g, ''));
-                return ascendingEmissions ? aEmissions - bEmissions : bEmissions - aEmissions;
+            const aEmissions = parseInt(a.cells[2].textContent.replace(/[^0-9]/g, ''));
+            const bEmissions = parseInt(b.cells[2].textContent.replace(/[^0-9]/g, ''));
+            return ascendingEmissions ? aEmissions - bEmissions : bEmissions - aEmissions;
             });
 
             rows.forEach(row => table.tBodies[0].appendChild(row));
         }
 
-        function sortTableByName(columnIndex) {
+        function sortTableByName(columnIndex) {                                                        // Sortierfunktion
             const table = document.getElementById("emissionstabelle");
             const rows = Array.from(table.tBodies[0].rows);
 
             rows.sort((a, b) => {
-                const aText = a.cells[columnIndex].textContent.trim().toLowerCase();
-                const bText = b.cells[columnIndex].textContent.trim().toLowerCase();
-                return ascendingName[columnIndex] ? aText.localeCompare(bText) : bText.localeCompare(aText);
+            const aText = a.cells[columnIndex].textContent.trim().toLowerCase();
+            const bText = b.cells[columnIndex].textContent.trim().toLowerCase();
+            return ascendingName[columnIndex] ? aText.localeCompare(bText) : bText.localeCompare(aText);
             });
 
             rows.forEach(row => table.tBodies[0].appendChild(row));
         }
-    </script>
+
+        function filterTableByName() {                                                             // Filterfunktion
+            const filterInput = document.getElementById("filter-input").value.trim().toLowerCase();
+            const table = document.getElementById("emissionstabelle");
+            const rows = Array.from(table.tBodies[0].rows);
+
+            rows.forEach(row => {
+            const companyName = row.cells[0].textContent.trim().toLowerCase();
+            row.style.display = companyName.includes(filterInput) ? '' : 'none';
+            });
+        }
+        </script>
+
 
     <section id="logo">
         <p class="Logo beschreibung">Das ist unser Logo / ein Symbol für unsere Mission.</p>
