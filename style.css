@@ -13,46 +13,44 @@ img {
   margin: 0 auto;
   padding: 1rem;
 }
-.flexbox {
-  display: flex;
-  flex-direction: column;
-  /*  Die Elemente werden untereinader platziert auf dem Handy */
-  gap: 1rem;
-}
-.box {background-color: #eee;
-  padding: 1rem;
-  text-align: center;}
+
+
 
 body {
   background-color: #f6faf7ad;
   font-family: Arial, sans-serif;
-/*  Responsiv: Flexibles Layout */
+  /*  Responsiv: Flexibles Layout */
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
 }
 
-  /* Seite flexibel für Tablets */
-  /*  und nebeneinander ab 768px */
-  @media (min-width: 768px) {
-    .flexbox {flex-direction: row;}
-    .box {flex: 1;}
-    body {padding: 20px;}
+/* Seite flexibel für Tablets */
+/*  und nebeneinander ab 768px */
+@media (min-width: 768px) {
+
+  body {
+    padding: 20px;
+    margin: 0 auto;
+    /* Rand auf beiden Seiten hinzufügen */
+  }
 }
 
 /* das gleiche fürs Handy */
 @media (max-width: 767px) {
-  .flexbox {
-    flex-direction: row;}
-  .box {flex: 1; }
-  body {padding: 20px;
-       margin: 0 10px; /* Rand auf beiden Seiten hinzufügen */
+
+
+  body {
+    padding: 20px;
+    margin: 0 10px;
+    /* Rand auf beiden Seiten hinzufügen */
   }
 }
 
 
 html {
-  font-size: 13px; /* Basis größe */
+  font-size: 13px;
+  /* Basis größe */
 }
 
 /* Ab hier optisch->>>>*/
@@ -62,7 +60,15 @@ h1 {
   color: darkblue;
   text-align: center;
   text-decoration: underline;
-  font-size: clamp(1.8rem, 5vw, 3.5rem); /* Fluid font-size */
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  /* Fluid font-size */
+  font-weight: bold;
+
+}
+
+h3 {
+  color: rgb(24, 24, 24);
+  font-weight: bold;
 }
 
 
@@ -70,12 +76,15 @@ h1 {
 /* NAVBAR FLEXBOX */
 .navbar {
   display: flex;
-  flex-wrap: wrap;              /* Umbruch erlauben */
+  flex-wrap: wrap;
+  /* Umbruch erlauben */
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  gap: 1rem;                     /* Abstand zwischen Zeilen/Elementen */
-  box-shadow: 0px clamp(0.25rem, 0.5vw, 0.375rem) clamp(0.375rem, 0.75vw, 0.5rem) rgba(0, 0, 0, 0.1); /* Fluid shadow */
+  gap: 1rem;
+  /* Abstand zwischen Zeilen/Elementen */
+  box-shadow: 0px clamp(0.25rem, 0.5vw, 0.375rem) clamp(0.375rem, 0.75vw, 0.5rem) rgba(0, 0, 0, 0.1);
+  /* Fluid shadow */
   background-color: #ffffff;
 }
 
@@ -83,7 +92,8 @@ h1 {
 .logo {
   max-width: 100%;
   height: auto;
-  width: clamp(15rem, 17vw, 7.5rem); /* Skaliert zwischen 100 und 180px */
+  width: clamp(15rem, 17vw, 7.5rem);
+  /* Skaliert zwischen 100 und 180px */
 
 }
 
@@ -98,12 +108,14 @@ h1 {
   flex-wrap: wrap;
 }
 
-.nav-links a {          /* Verlinkung Seiten */
+.nav-links a {
+  /* Verlinkung Seiten */
   text-decoration: none;
   color: #333;
   padding: 0.5rem 0.75rem;
   font-weight: bold;
 }
+
 nav li a:hover {
   color: rgb(244, 10, 244);
   text-decoration: underline;
@@ -121,6 +133,7 @@ nav li a.active {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .nav-links {
     width: 100%;
     justify-content: flex-start;
@@ -133,48 +146,69 @@ nav li a.active {
 
 
 p.Text.Homepage {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
   line-height: 1.6;
   color: #050505;
-  margin: 20px auto; /* zentriert die Box */
-  max-width: 1000px; /* maximale Breite */
+  margin: 20px auto;
+  /* zentriert die Box */
+  max-width: 1000px;
+  /* maximale Breite */
   text-align: justify;
-  border: 5px solid darkblue; /* Rahmen hinzufügen */
-  padding: 1rem; /* Innenabstand */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
-  display: flow-root; /*  verhindert, dass das Menü mit dem Text überlappt */
+  border: 5px solid darkblue;
+  /* Rahmen hinzufügen */
+  padding: 1rem;
+  /* Innenabstand */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
+  display: flow-root;
+  /*  verhindert, dass das Menü mit dem Text überlappt */
 }
 
 
 
 
 p.Text.Datenschutz {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
   line-height: 1.6;
   color: #050505;
   margin: 20px auto;
-  max-width: 1000px; /* breiter */
-  text-align: center; /* weiter links */
+  max-width: 1000px;
+  /* breiter */
+  text-align: center;
+  /* weiter links */
   display: block;
   text-align: justify;
-  border: 5px solid darkblue; /* Rahmen hinzufügen */
-  padding: 1rem; /* Innenabstand */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
+  border: 5px solid darkblue;
+  /* Rahmen hinzufügen */
+  padding: 1rem;
+  /* Innenabstand */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
   margin-top: 8%;
 }
+
 section.datenschutz {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
   font-family: sans-serif;
   text-align: justify;
-  border: 5px solid darkblue; /* Rahmen hinzufügen */
-  padding: 1rem; /* Innenabstand */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  border: 5px solid darkblue;
+  /* Rahmen hinzufügen */
+  padding: 1rem;
+  /* Innenabstand */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
 }
 
 .suchleiste {
@@ -186,53 +220,73 @@ section.datenschutz {
 .suchleiste input {
   flex: 1;
   padding: 8px;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
 }
 
 .suchleiste button {
   padding: 8px 12px;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
   background-color: rgb(103, 171, 249);
 }
 
 div.lokale-navigation {
   display: flex;
-  justify-content: flex-start; /* Standard: Links-nach-Rechts-Schriftkultur */
-  direction: ltr; /* Standard: Links-nach-Rechts-Schriftkultur */
-  gap: 10px; /* Abstand zwischen den Links */
-  max-width: 500px; /* maximale Breite */
-  border: #050505 solid 3px; /* Rahmen hinzufügen */
-  padding: 1px; /* Innenabstand */
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
-  border: 4px solid darkblue; /* Rahmen hinzufügen */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
-  gap: 10px; /* Abstand zwischen Elementen */
+  justify-content: flex-start;
+  /* Standard: Links-nach-Rechts-Schriftkultur */
+  direction: ltr;
+  /* Standard: Links-nach-Rechts-Schriftkultur */
+  gap: 10px;
+  /* Abstand zwischen den Links */
+  max-width: 500px;
+  /* maximale Breite */
+  border: #050505 solid 3px;
+  /* Rahmen hinzufügen */
+  padding: 1px;
+  /* Innenabstand */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
+  border: 4px solid darkblue;
+  /* Rahmen hinzufügen */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
+  gap: 10px;
+  /* Abstand zwischen Elementen */
   font-weight: bold;
-  width: 25.5rem; /* 1rem = 16px, so 200px = 12.5rem */
+  width: 25.5rem;
+  /* 1rem = 16px, so 200px = 12.5rem */
+
 }
 
- 
 
 
-div.filter {  
+
+div.filter {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 400px;
   margin: 20px auto;
   padding: 10px;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
-  border: 2px solid darkblue; /* Rahmen hinzufügen */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
-  gap: 10px; /* Abstand zwischen Elementen */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
+  border: 2px solid darkblue;
+  /* Rahmen hinzufügen */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
+  gap: 10px;
+  /* Abstand zwischen Elementen */
 }
 
 div.filter input {
   flex: 1;
   padding: 8px;
-  font-size: clamp(1rem, 2vw, 1.25rem); 
+  font-size: clamp(1rem, 2vw, 1.25rem);
   border: 1px solid darkblue;
   border-radius: 4px;
 }
@@ -240,26 +294,23 @@ div.filter input {
 
 
 footer.footer {
-  display: flex; 
-  flex-direction: column; 
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem); 
-  border: 5px solid darkblue; 
-  padding: 1rem; /* Innenabstand reduziert */
-  border-radius: 10px; /* Abgerundete Ecken verkleinert */
-  background-color: #e0e7ef; /* Helle Hintergrundfarbe beibehalten */
-  margin: 20px auto; /* Weniger vertikaler Abstand */
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 5px solid darkblue;
+  padding: 1rem;
+  /* Innenabstand reduziert */
+  border-radius: 10px;
+  /* Abgerundete Ecken verkleinert */
+  background-color: #e0e7ef;
+  /* Helle Hintergrundfarbe beibehalten */
+  margin: 20px auto;
+  /* Weniger vertikaler Abstand */
   text-align: center;
   position: relative;
 }
 
-table.tabelle.Homepage {
-  /* Tabelle auf der Homepage */
-  border-collapse: collapse;
-  width: 60%;
-  margin: 20px auto;
-  color: rgb(12, 11, 11);
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
-}
+
 
 
 
@@ -268,7 +319,8 @@ td {
   border: 3px solid black;
   padding: 10px;
   text-align: left;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
 }
 
 th {
@@ -277,7 +329,8 @@ th {
   border: 3px solid black;
   padding: 10px;
   text-align: left;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
 }
 
 table.tabelle.Emissionsdaten {
@@ -286,7 +339,8 @@ table.tabelle.Emissionsdaten {
   width: 60%;
   margin: 20px auto;
   color: rgb(12, 11, 11);
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
 }
 
 table.tabelle.Energien {
@@ -295,7 +349,8 @@ table.tabelle.Energien {
   width: 60%;
   margin: 20px auto;
   color: rgb(12, 11, 11);
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
 }
 
 p.Logo.beschreibung {
@@ -303,29 +358,40 @@ p.Logo.beschreibung {
   font-style: italic;
   color: #0e0d0d;
   margin-top: 10px;
-  font-size: clamp(1rem, 1.5vw, 2rem); /* Fluid font-size kleiner */
-  padding-top: 10%; /* Weniger Abstand oben */
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  /* Fluid font-size kleiner */
+  padding-top: 10%;
+  /* Weniger Abstand oben */
 }
 
 img.Logo.Foto {
   display: block;
   margin: 0 auto;
-  width: 400px; /* Größe des Logos kleiner */
+  width: 400px;
+  /* Größe des Logos kleiner */
 }
 
 
 p.TextCo2 {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid font-size */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid font-size */
   line-height: 1.6;
   color: #050505;
-  margin: 20px auto; /* zentriert die Box */
-  max-width: 1000px; /* maximale Breite */
+  margin: 20px auto;
+  /* zentriert die Box */
+  max-width: 1000px;
+  /* maximale Breite */
   text-align: justify;
-  border: 5px solid darkblue; /* Rahmen hinzufügen */
-  padding: 1rem; /* Innenabstand */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
-  display: flow-root; /*  verhindert, dass das Menü mit dem Text überlappt */
+  border: 5px solid darkblue;
+  /* Rahmen hinzufügen */
+  padding: 1rem;
+  /* Innenabstand */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
+  display: flow-root;
+  /*  verhindert, dass das Menü mit dem Text überlappt */
 }
 
 div.impressumtext {
@@ -335,16 +401,21 @@ div.impressumtext {
   flex-direction: column;
   text-align: center;
   list-style-position: inside;
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Fluid schriftgröße */
-  border: 5px solid darkblue; /* Rahmen hinzufügen */
-  padding: 1rem; /* Innenabstand */
-  border-radius: 8px; /* Abgerundete Ecken */
-  background-color: #e5e6ea; /* Hintergrundfarbe */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Fluid schriftgröße */
+  border: 5px solid darkblue;
+  /* Rahmen hinzufügen */
+  padding: 1rem;
+  /* Innenabstand */
+  border-radius: 8px;
+  /* Abgerundete Ecken */
+  background-color: #e5e6ea;
+  /* Hintergrundfarbe */
 }
 
 
 
-  
+
 
 
 img.Energien {
@@ -352,29 +423,39 @@ img.Energien {
   width: 350px;
   height: 250px;
   object-fit: cover;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 24px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
   margin-top: 24px;
 }
 
 .wrapper {
-  max-width: 1000px;   /* maximale Breite auf großen Screens */
-  margin: 0 auto;      /* zentriert den Container */
+  max-width: 1000px;
+  /* maximale Breite auf großen Screens */
+  margin: 0 auto;
+  /* zentriert den Container */
 }
 
 .container {
   display: flex;
-  gap: 10px; /* Abstand zwischen Bildern */
-  justify-content: center; /* zentriert die Bilder horizontal */
+  gap: 10px;
+  /* Abstand zwischen Bildern */
+  justify-content: center;
+  /* zentriert die Bilder horizontal */
 }
+
 .container img.Energien {
-  flex: 1;             /* beide gleich breit */
-  height: 200px;       /* gleiche Höhe */
-  object-fit: cover;   /* Bild füllt Höhe/Breite, evtl. Beschnitt */
-  width: 100%;         /* wichtig, damit flex sauber greift */
-  border-radius: 8px;  /* optional, hübscher */
+  flex: 1;
+  /* beide gleich breit */
+  height: 200px;
+  /* gleiche Höhe */
+  object-fit: cover;
+  /* Bild füllt Höhe/Breite, evtl. Beschnitt */
+  width: 100%;
+  /* wichtig, damit flex sauber greift */
+  border-radius: 8px;
+  /* optional, hübscher */
 }
 
 @media (max-width: 600px) {
@@ -383,7 +464,6 @@ img.Energien {
   }
 }
 
-  .container img.Energien {
-    height: 250px;
-  }
- 
+.container img.Energien {
+  height: 250px;
+}
