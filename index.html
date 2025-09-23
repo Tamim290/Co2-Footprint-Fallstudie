@@ -11,6 +11,7 @@
   rel="stylesheet" 
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
   crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="style.css">
@@ -43,25 +44,39 @@
     </form>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery einbinden -->
-    <script>
-        $(function () {
-            $('#suche').on('submit', function (e) {
-                e.preventDefault();
-                let query = $(this).find('[name="q"]').val().trim().toLowerCase()
-                    .replace(/[^a-z0-9äöüß\s]/gi, '');
-                const pages = {
-                    'impressum': 'Impressum.html',
-                    'datenschutz': 'Datenschutz.html',
-                    'lösungsansätze': 'Lösungsansätze.html'
-                };
-                if (pages[query]) {
-                    window.location.href = pages[query];
-                } else {
-                    alert('Suchbegriff nicht gefunden');
-                }
-            });
-        });
-    </script>
+ <script>
+$(function () {
+    $('#suche').on('submit', function (e) {
+        e.preventDefault();
+
+     
+        let query = $(this).find('[name="q"]').val().trim().toLowerCase();
+
+        // Regex: erlaubt nur Buchstaben, Zahlen, deutsche Umlaute und Leerzeichen
+        const allowedRegex = /^[a-z0-9äöüß\s]+$/i;
+
+        if (!allowedRegex.test(query)) {
+            alert('Unerlaubte Zeichen verwendet!');
+            return; // Stoppt die Verarbeitung bei unsicheren Eingaben
+        }
+
+        // Definierte Seiten
+        const pages = {
+            'impressum': 'Impressum.html',
+            'datenschutz': 'Datenschutz.html',
+            'lösungsansätze': 'Lösungsansätze.html'
+        };
+
+        if (Object.prototype.hasOwnProperty.call(pages, query)) {
+            // Sicherer Redirect auf definierte Seite
+            window.location.href = pages[query];
+        } else {
+            // Optional: sichere Anzeige der Sucheingabe als Text
+            $('#ergebnis').text('Suchbegriff nicht gefunden: ' + query);
+        }
+    });
+});
+</script>
 
     <h1>Willkommen auf Planet for future</h1>
 
@@ -86,7 +101,7 @@
     </div>
 
 
-    <p class="Text Homepage">
+    <p class="Text Homepage">    <!-- Text der Homepage -->
         Unsere Erde steht vor großen Herausforderungen – Klimawandel, Ressourcenknappheit und die wachsende Belastung
         durch
         Treibhausgase. Besonders CO₂-Emissionen spielen dabei eine entscheidende Rolle.
@@ -149,52 +164,52 @@
 
 
         <div class="filter">
-            <label for="filter-input">Filter nach Unternehmen:</label>
-            <input type="text" id="filter-input" oninput="filterTableByName()" placeholder="Unternehmen suchen...">
+            <label for="filter-input">Filter:</label>
+            <input type="text" id="filter-input" oninput="filterTable()" placeholder="Suchbegriff eingeben...">
         </div>
 
         <table class="tabelle Emissionsdaten" id="emissionstabelle">
             <thead>
             <tr>
-                <th>
-                Unternehmen        <!--Bootstrap Framework nutzen für die button-->
-                <button class="btn btn-sm btn-light" onclick="toggleSortOrderByName(0)">🔄</button>
-                </th>
-                <th>
-                Land
-                <button class="btn btn-sm btn-light"  onclick="toggleSortOrderByName(1)">🔄</button>
-                </th>
-                <th>
-                CO₂-Emissionen (pro Jahr)
-                <button class="btn btn-sm btn-light" onclick="toggleSortOrderByEmissions()">🔄</button>
-                </th>
+            <th>
+            Unternehmen           <!--Bootstrap Framework nutzen für die button-->
+            <button class="btn btn-sm btn-light" onclick="toggleSortOrderByName(0)">🔄</button>
+            </th>
+            <th>
+            Land
+            <button class="btn btn-sm btn-light" onclick="toggleSortOrderByName(1)">🔄</button>
+            </th>
+            <th>
+            CO₂-Emissionen (pro Jahr)
+            <button class="btn btn-sm btn-light" onclick="toggleSortOrderByEmissions()">🔄</button>
+            </th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Lufthansa Group</td>
-                <td>Deutschland</td>
-                <td>ca. 28.967.753 Tonnen CO₂</td>
+            <td>Lufthansa Group</td>
+            <td>Deutschland</td>
+            <td>ca. 28.967.753 Tonnen CO₂</td>
             </tr>
             <tr>
-                <td>Deutsche Bahn</td>
-                <td>Deutschland</td>
-                <td>ca. 10.110.000 Tonnen CO₂</td>
+            <td>Deutsche Bahn</td>
+            <td>Deutschland</td>
+            <td>ca. 10.110.000 Tonnen CO₂</td>
             </tr>
             <tr>
-                <td>Apple</td>
-                <td>USA</td>
-                <td>ca. 15.600.000 Tonnen CO₂</td>
+            <td>Apple</td>
+            <td>USA</td>
+            <td>ca. 15.600.000 Tonnen CO₂</td>
             </tr>
             <tr>
-                <td>Lenovo</td>
-                <td>China</td>
-                <td>ca. 10.200.000 Tonnen CO₂</td>
+            <td>Lenovo</td>
+            <td>China</td>
+            <td>ca. 10.200.000 Tonnen CO₂</td>
             </tr>
             <tr>
-                <td>Solvay</td>
-                <td>Belgien</td>
-                <td>ca. 6.000.000 Tonnen CO₂</td>
+            <td>Solvay</td>
+            <td>Belgien</td>
+            <td>ca. 6.000.000 Tonnen CO₂</td>
             </tr>
             </tbody>
         </table>
@@ -204,7 +219,7 @@
         let ascendingEmissions = true;
         let ascendingName = [true, true];
 
-        function toggleSortOrderByEmissions() {                                    // Umschalten der Sortierreihenfolge
+        function toggleSortOrderByEmissions() {
             ascendingEmissions = !ascendingEmissions;
             sortTableByEmissions();
         }
@@ -214,7 +229,7 @@
             sortTableByName(columnIndex);
         }
 
-        function sortTableByEmissions() {                                                     // Sortierfunktion   
+        function sortTableByEmissions() {
             const table = document.getElementById("emissionstabelle");
             const rows = Array.from(table.tBodies[0].rows);
 
@@ -227,7 +242,7 @@
             rows.forEach(row => table.tBodies[0].appendChild(row));
         }
 
-        function sortTableByName(columnIndex) {                                                        // Sortierfunktion
+        function sortTableByName(columnIndex) {
             const table = document.getElementById("emissionstabelle");
             const rows = Array.from(table.tBodies[0].rows);
 
@@ -240,14 +255,14 @@
             rows.forEach(row => table.tBodies[0].appendChild(row));
         }
 
-        function filterTableByName() {                                                             // Filterfunktion
+        function filterTable() {
             const filterInput = document.getElementById("filter-input").value.trim().toLowerCase();
             const table = document.getElementById("emissionstabelle");
             const rows = Array.from(table.tBodies[0].rows);
 
             rows.forEach(row => {
-            const companyName = row.cells[0].textContent.trim().toLowerCase();
-            row.style.display = companyName.includes(filterInput) ? '' : 'none';
+            const rowText = Array.from(row.cells).map(cell => cell.textContent.trim().toLowerCase()).join(' ');
+            row.style.display = rowText.includes(filterInput) ? '' : 'none';
             });
         }
         </script>
@@ -282,8 +297,8 @@
 <section id="Datenschutz">
     <footer class="footer">
         <nav class="navbar" style="display: flex; justify-content: center;font-weight: bold;">
-            <li><a href="Datenschutz.html">Datenschutz</a></li>
-            <li><a href="Impressum.html">Impressum</a></li>
+            <ul><a href="Datenschutz.html">Datenschutz</a></ul>
+            <ul><a href="Impressum.html">Impressum</a></ul>
         </nav>
 </section>
 </footer>

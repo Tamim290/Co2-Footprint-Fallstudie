@@ -85,18 +85,9 @@ h3 {
   /* Abstand zwischen Zeilen/Elementen */
   box-shadow: 0px clamp(0.25rem, 0.5vw, 0.375rem) clamp(0.375rem, 0.75vw, 0.5rem) rgba(0, 0, 0, 0.1);
   /* Fluid shadow */
-  background-color: #ffffff;
-}
-
-/* Logo */
-.logo {
-  max-width: 100%;
-  height: auto;
-  width: clamp(15rem, 17vw, 7.5rem);
-  /* Skaliert zwischen 100 und 180px */
+  background-color: #e7e7e7;
 
 }
-
 
 /* Navigation */
 .nav-links {
@@ -114,16 +105,26 @@ h3 {
   color: #333;
   padding: 0.5rem 0.75rem;
   font-weight: bold;
+  font-size:  clamp(1.5rem, 2vw, 1.25rem);
 }
+nav li a.active {
+  color: darkblue;
+  text-decoration: underline;
+}
+
 
 nav li a:hover {
   color: rgb(244, 10, 244);
   text-decoration: underline;
 }
 
-nav li a.active {
-  color: darkblue;
-  text-decoration: underline;
+/* Logo */
+.logo {
+  max-width: 100%;
+  height: auto;
+  width: clamp(15rem, 17vw, 7.5rem);
+  /* Skaliert zwischen 100 und 180px */
+
 }
 
 
@@ -416,8 +417,6 @@ div.impressumtext {
 
 
 
-
-
 img.Energien {
   display: block;
   width: 350px;
@@ -453,9 +452,6 @@ img.Energien {
   object-fit: cover;
   /* Bild füllt Höhe/Breite, evtl. Beschnitt */
   width: 100%;
-  /* wichtig, damit flex sauber greift */
-  border-radius: 8px;
-  /* optional, hübscher */
 }
 
 @media (max-width: 600px) {
